@@ -18,11 +18,11 @@ At the historical analysis level, 6,418 customers were analyzed with an overall 
 
 **Summary Page** — KPIs, demographic breakdown, service usage analysis, geographic churn rates, and churn category distribution.
 
-![Summary Dashboard]('Power%20BI%20Dashboard%20Screenshots/Summary Page.png')
+![Summary Dashboard](Power%20BI%20Dashboard%20Screenshots/Summary%20Page.png)
 
 **Prediction Page** — XGBoost-predicted churner profiles with a scrollable at-risk customer table showing individual revenue, charges, and referral data.
 
-![Prediction Dashboard]('Power%20BI%20Dashboard%20Screenshots/Predictions Page.png')
+![Prediction Dashboard](Power%20BI%20Dashboard%20Screenshots/Predictions%20Page.png)
 
 <br>
 
