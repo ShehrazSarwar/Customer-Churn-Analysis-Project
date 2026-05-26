@@ -108,7 +108,7 @@ Customer Churn Analysis Project/
 
 ## How the Pipeline Works
 
-**SQL Server** handles everything from raw data ingestion to producing clean, analysis-ready views. The pipeline runs across six scripts. Raw CSV data lands in a staging table first (`dbo.stg_Churn`). A null audit runs across all 32 columns. Missing values in service columns are filled with `No` or `None` rather than dropped, because a null there means the customer simply doesn't subscribe — it's not missing data. Churn classification nulls go into an `Others` bucket. The cleaned data writes into a production table (`dbo.prod_Churn`), and two SQL views split it by customer status: `vw_ChurnData` for historical training data, `vw_JoinData` for new joiners.
+**SQL Server** handles everything from raw data ingestion to producing clean, analysis-ready views. The pipeline runs across six scripts. Raw CSV data lands in a staging table first (`dbo.stg_Churn`). A null audit runs across all 32 columns. Missing values in service columns are filled with `No` or `None` rather than dropped, because a null there means the customer simply doesn't subscribe, it's not missing data. Churn classification nulls go into an `Others` bucket. The cleaned data writes into a production table (`dbo.prod_Churn`), and two SQL views split it by customer status: `vw_ChurnData` for historical training data, `vw_JoinData` for new joiners.
 
 **Power BI** connects directly to those views. No manual CSV exports needed for the BI layer. The two-page report includes slicers for Monthly Charge Range and Marital Status that filter across all visuals simultaneously.
 
@@ -122,7 +122,7 @@ Customer Churn Analysis Project/
 | XGBoost | 0.8386 | 0.7131 | 0.7378 | 0.7252 |
 | LightGBM | 0.8228 | 0.6642 | 0.7810 | 0.7179 |
 
-XGBoost was selected. Hyperparameter tuning pushed accuracy to 86% but dropped recall on the churn class to 65%. In a retention context that tradeoff goes the wrong way — a missed churner is a lost customer, so recall matters more than overall accuracy. The baseline XGBoost catches roughly 10% more actual churners and that's the version that ships.
+XGBoost was selected. Hyperparameter tuning pushed accuracy to 86% but dropped recall on the churn class to 65%. In a retention context that tradeoff goes the wrong way, a missed churner is a lost customer, so recall matters more than overall accuracy. The baseline XGBoost catches roughly 10% more actual churners and that's the version that ships.
 
 **ChurnRadar** is the Streamlit app. Upload the two `.joblib` files and a customer CSV, and the dashboard runs predictions automatically. A threshold slider (default 50%) controls which customers appear. Customers get tagged Critical (≥90%), High (75-90%), or Medium (<75%) and the retention team can filter, drill into individual profiles, and export a targeted contact list.
 
