@@ -1,0 +1,37 @@
+USE db_Churn;
+GO
+
+SELECT 
+    COUNT(*) - COUNT(Customer_ID) AS Customer_ID_Null_Count,
+    COUNT(*) - COUNT(Gender) AS Gender_Null_Count,
+    COUNT(*) - COUNT(Age) AS Age_Null_Count,
+    COUNT(*) - COUNT(Married) AS Married_Null_Count,
+    COUNT(*) - COUNT(State) AS State_Null_Count,
+    COUNT(*) - COUNT(Number_of_Referrals) AS Number_of_Referrals_Null_Count,
+    COUNT(*) - COUNT(Tenure_in_Months) AS Tenure_in_Months_Null_Count,
+    COUNT(*) - COUNT(Value_Deal) AS Value_Deal_Null_Count,
+    COUNT(*) - COUNT(Phone_Service) AS Phone_Service_Null_Count,
+    COUNT(*) - COUNT(Multiple_Lines) AS Multiple_Lines_Null_Count,
+    COUNT(*) - COUNT(Internet_Service) AS Internet_Service_Null_Count,
+    COUNT(*) - COUNT(Internet_Type) AS Internet_Type_Null_Count,
+    COUNT(*) - COUNT(Online_Security) AS Online_Security_Null_Count,
+    COUNT(*) - COUNT(Online_Backup) AS Online_Backup_Null_Count,
+    COUNT(*) - COUNT(Device_Protection_Plan) AS Device_Protection_Plan_Null_Count,
+    COUNT(*) - COUNT(Premium_Support) AS Premium_Support_Null_Count,
+    COUNT(*) - COUNT(Streaming_TV) AS Streaming_TV_Null_Count,
+    COUNT(*) - COUNT(Streaming_Movies) AS Streaming_Movies_Null_Count,
+    COUNT(*) - COUNT(Streaming_Music) AS Streaming_Music_Null_Count,
+    COUNT(*) - COUNT(Unlimited_Data) AS Unlimited_Data_Null_Count,
+    COUNT(*) - COUNT(Contract) AS Contract_Null_Count,
+    COUNT(*) - COUNT(Paperless_Billing) AS Paperless_Billing_Null_Count,
+    COUNT(*) - COUNT(Payment_Method) AS Payment_Method_Null_Count,
+    COUNT(*) - COUNT(Monthly_Charge) AS Monthly_Charge_Null_Count,
+    COUNT(*) - COUNT(Total_Charges) AS Total_Charges_Null_Count,
+    COUNT(*) - COUNT(Total_Refunds) AS Total_Refunds_Null_Count,
+    COUNT(*) - COUNT(Total_Extra_Data_Charges) AS Total_Extra_Data_Charges_Null_Count,
+    COUNT(*) - COUNT(Total_Long_Distance_Charges) AS Total_Long_Distance_Charges_Null_Count,
+    COUNT(*) - COUNT(Total_Revenue) AS Total_Revenue_Null_Count,
+    COUNT(*) - COUNT(Customer_Status) AS Customer_Status_Null_Count,
+    COUNT(*) - COUNT(Churn_Category) AS Churn_Category_Null_Count,
+    COUNT(*) - COUNT(Churn_Reason) AS Churn_Reason_Null_Count
+FROM dbo.stg_Churn;
