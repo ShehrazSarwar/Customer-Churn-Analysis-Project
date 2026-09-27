@@ -1,0 +1,35 @@
+-- =============================================
+-- NULL VALUE FILLING / IMPUTATION STRATEGY
+-- Churn Analysis Project
+-- =============================================
+-- This document defines the business rules used to handle
+-- missing (NULL) values in the dataset before analysis.
+-- These rules ensure consistency in Power BI dashboards
+-- and SQL-based reporting.
+-- =============================================
+
+-- Service-related columns:
+-- NULL is interpreted as "customer does NOT have the service"
+
+Value_Deal            - None
+Multiple_Lines        - No
+Internet_Type         - None
+Online_Security       - No
+Online_Backup         - No
+Device_Protection_Plan - No
+Premium_Support       - No
+Streaming_TV          - No
+Streaming_Movies      - No
+Streaming_Music       - No
+Unlimited_Data        - No
+
+-- Churn classification columns:
+-- Missing values are grouped into "Others"
+-- to preserve records without losing analytical meaning
+
+Churn_Category        - Others
+Churn_Reason          - Others
+
+-- =============================================
+-- END OF IMPUTATION STRATEGY
+-- =============================================
