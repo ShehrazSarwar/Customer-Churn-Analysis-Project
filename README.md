@@ -26,8 +26,6 @@ The source data is the [Telecom Customer Churn Dataset](https://www.kaggle.com/d
 
 ![Prediction Dashboard](Power%20BI%20Dashboard%20Screenshots/Predictions%20Page.jpg)
 
-*Note: the dashboard above reflects an earlier baseline-model export (388 flagged customers, ₹44,512 revenue at risk). The notebook has since been extended with additional models and a tuned deployment model (below); refresh `high_risk_churn_list.csv` and the Power BI data source if you want the dashboard to match the latest run.*
-
 <br>
 
 ## Key Numbers
